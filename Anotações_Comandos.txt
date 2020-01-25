@@ -3,15 +3,22 @@ node NOMEARQUIVO
 node server.js
 
 
+//ctrl + c em CMD para node
+
+
 //inicia node, cria package.json, define dados do app
 //package.json: define projeto como node
 npm init
 
 
+//para iniciar app node.js, como configurado em package.json
+npm start
+
+
 //instalando pacote express com versão fixa para curso
-//--exact define a versão do express e que o memso é uma 
-//dependencia da app
-npm install express@4.16.3 --save--exact
+//--save define a versão do express e que o memso é uma dependencia da app
+//--save-exact faz a instalação da versão exata
+npm install express@4.16.3 --save-exact
 
 
 //Pastas
@@ -28,5 +35,17 @@ npm install
 //vai ler package.json e fazer do downlaod de 
 //todas as dependencias do projeto
 
-
 //Modulos devem ter 'responsabilidades' únicas
+
+/* nodemon */
+//faz rebuild de app conforme alterações nos arquivos automaticamente
+
+//--save-dev dependencia apenas para desenvolvimento
+//--save-exact faz a instalação da versão exata
+npm install nodemon@1.18.4 --save-dev --save-exact
+
+//-g instala de forma global para poder usar apartir do CMD os comandos do modulo nodemon
+npm install -g nodemon@1.18.4 --save-exact
+
+/* /fim nodemon */
+
