@@ -1,5 +1,6 @@
 //executa arquivos/modes
 node NOMEARQUIVO
+node server.js
 
 //inicia node, cria package.json, define dados do app
 //package.json: define projeto como node
@@ -14,3 +15,13 @@ npm install express@4.16.3 --save--exact
 // SRC
 // SRC > app (Códigos de lógica)
 // SRC > config (Códigos de configurações)
+
+//Pasta Node_modules
+//É criada baseada no sistema operacional em uso
+//boa pratica retirar pasta ao compartilhar projeto
+//Para refazer a pasta 'Node_modules':
+npm install 
+
+//vai ler package.json e fazer do downlaod de 
+//todas as dependencias do projeto
+

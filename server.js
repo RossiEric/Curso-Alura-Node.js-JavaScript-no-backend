@@ -1,37 +1,38 @@
-const http = require('http');
+//definide uso de modulo express
+const express = require('express');
 
-const servidor = http.createServer(
-    function(req, resp){
+//chamada da função express para receber objetos
+const app = express();
 
-       let html = '';
-       if(req.url == '/'){
-            html = `
-                <html>
-                    <head>
-                        <meta charset="utf-8">
-                    </head>
-                    <body>
-                        <h1> Casa do Código </h1>
-                    </body> 
-                </html>
-                `;
-        } else if(req.url == '/livros'){
-            html = `
-                <html>
-                    <head>
-                        <meta charset="utf-8">
-                    </head>
-                    <body>
-                        <h1> Lista de livros </h1>
-                    </body> 
-                </html>
-                `;
-        } 
+app.listen(3000, function(){
+    console.log('servidor rodando http://localhost:3000/');
+});
 
-    resp.end(html);
-    });
+//get para atender rotas
+app.get('/', function(req, resp){
+    //responde com html
+    resp.send(`
+        <html>
+            <head>
+                <meta charset="utf-8">
+            </head>
+            <body>
+                <h1> Casa do Código </h1>
+            </body> 
+        </html>
+    `);
+});
 
-servidor.listen(3000);
-
-
-
+app.get('/livros', function(req, resp){
+    //responde com html
+    resp.send(`
+        <html>
+            <head>
+                <meta charset="utf-8">
+            </head>
+            <body>
+                <h1> Lista livros </h1>
+            </body> 
+        </html>
+    `);
+});
