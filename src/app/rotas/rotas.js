@@ -18,7 +18,19 @@ module.exports = (app) => {
     app.get('/livros', function(req, resp){
         //responde com html
         resp.marko(
-            require('../views/livros/lista/lista.marko')
+            //
+            require('../views/livros/lista/lista.marko'),{
+                livros:[
+                    {
+                        id: 1,
+                        titulo: 'Livro 1 lorem ipsum'
+                    },
+                    {
+                        id: 2,
+                        titulo: 'Livro 2 lero lero'
+                    }
+                ]
+            }
         );
     });
 }

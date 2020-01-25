@@ -10,9 +10,9 @@
                 <td>ID</td>
                 <td>Título</td>
             </tr>
-                <tr>
-                <td>1</td>
-                <td>Fundamentos do Node</td>
+            <tr for(item in data.livros)> 
+                <td>${item.id}</td>
+                <td>${item.titulo}</td>
             </tr>
         </table> 
     </body> 

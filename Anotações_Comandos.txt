@@ -37,6 +37,8 @@ npm install
 
 //Modulos devem ter 'responsabilidades' únicas
 
+
+--------------------------------------------------------------------------------
 /* nodemon */
 //faz rebuild de app conforme alterações nos arquivos automaticamente
 
@@ -48,9 +50,13 @@ npm install nodemon@1.18.4 --save-dev --save-exact
 npm install -g nodemon@1.18.4 --save-exact
 /* /fim nodemon */
 
+
+--------------------------------------------------------------------------------
 /* Express + Marko.js */
 //gerar templates html, funciona bem com express
 npm install marko@4.13.4-1  --save-exact
 
+//Marko permite enviar objetos javascript para as paginas, podendo popular dados na mesma de forma simples
+//Marko tranforms paginas .marko em modulos.js automaticamente
 /* /fim Express + Marko.js */
 
