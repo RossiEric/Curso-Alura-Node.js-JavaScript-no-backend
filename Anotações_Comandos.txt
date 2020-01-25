@@ -60,3 +60,15 @@ npm install marko@4.13.4-1  --save-exact
 //Marko tranforms paginas .marko em modulos.js automaticamente
 /* /fim Express + Marko.js */
 
+
+--------------------------------------------------------------------------------
+/* SQLlite */
+//npm install sqlite3@4.0.2 --save-exact não compativel com node v12
+//usei
+npm install sqlite3 --save-exact
+
+
+--------------------------------------------------------------------------------
+//
+
+
