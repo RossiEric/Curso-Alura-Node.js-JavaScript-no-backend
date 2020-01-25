@@ -1,8 +1,4 @@
-//definide uso de modulo express
-const express = require('express');
-
-//chamada da função express para receber objetos
-const app = express();
+const app = require('./src/config/custom-express');
 
 app.listen(3000, function(){
     console.log('servidor rodando http://localhost:3000/');

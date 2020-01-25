@@ -2,26 +2,31 @@
 node NOMEARQUIVO
 node server.js
 
+
 //inicia node, cria package.json, define dados do app
 //package.json: define projeto como node
 npm init
+
 
 //instalando pacote express com versão fixa para curso
 //--exact define a versão do express e que o memso é uma 
 //dependencia da app
 npm install express@4.16.3 --save--exact
 
+
 //Pastas
 // SRC
 // SRC > app (Códigos de lógica)
 // SRC > config (Códigos de configurações)
+
 
 //Pasta Node_modules
 //É criada baseada no sistema operacional em uso
 //boa pratica retirar pasta ao compartilhar projeto
 //Para refazer a pasta 'Node_modules':
 npm install 
-
 //vai ler package.json e fazer do downlaod de 
 //todas as dependencias do projeto
 
+
+//Modulos devem ter 'responsabilidades' únicas
