@@ -1,0 +1,16 @@
+//executa arquivos/modes
+node NOMEARQUIVO
+
+//inicia node, cria package.json, define dados do app
+//package.json: define projeto como node
+npm init
+
+//instalando pacote express com versão fixa para curso
+//--exact define a versão do express e que o memso é uma 
+//dependencia da app
+npm install express@4.16.3 --save--exact
+
+//Pastas
+// SRC
+// SRC > app (Códigos de lógica)
+// SRC > config (Códigos de configurações)

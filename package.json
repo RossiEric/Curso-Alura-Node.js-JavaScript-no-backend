@@ -1,0 +1,23 @@
+{
+  "name": "curso-alura-node.js---javascript-no-backend",
+  "version": "1.0.0",
+  "description": "course/nodejs-fundamentos",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RossiEric/Curso-Alura-Node.js---JavaScript-no-backend.git"
+  },
+  "author": "Eric Rossi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RossiEric/Curso-Alura-Node.js---JavaScript-no-backend/issues"
+  },
+  "homepage": "https://github.com/RossiEric/Curso-Alura-Node.js---JavaScript-no-backend#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
