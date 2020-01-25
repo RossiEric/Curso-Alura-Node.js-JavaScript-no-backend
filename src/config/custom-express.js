@@ -1,3 +1,7 @@
+//definindo MARKO para trabalhar com node e express
+require('marko/node-require').install;
+require('marko/express');
+
 //definide uso de modulo express
 const express = require('express');
 

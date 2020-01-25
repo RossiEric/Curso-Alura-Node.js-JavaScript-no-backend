@@ -46,6 +46,11 @@ npm install nodemon@1.18.4 --save-dev --save-exact
 
 //-g instala de forma global para poder usar apartir do CMD os comandos do modulo nodemon
 npm install -g nodemon@1.18.4 --save-exact
-
 /* /fim nodemon */
+
+/* Express + Marko.js */
+//gerar templates html, funciona bem com express
+npm install marko@4.13.4-1  --save-exact
+
+/* /fim Express + Marko.js */
 
