@@ -11,6 +11,9 @@ const app = express();
 //chamada de body-parser para aplicação
 const bodyParser = require('body-parser');
 
+//chamada method-override
+const methodOverride = require('method-override');
+
 //definindo arquivos publicos com Middleware e express.js
 app.use('/estatico', express.static('src/app/public'))
 
@@ -18,6 +21,16 @@ app.use('/estatico', express.static('src/app/public'))
 //receber objetos complexos em json dos forms
 app.use(bodyParser.urlencoded({
     extended: true
+}));
+
+//method-override, para troca de metods em forms dependendo da entrada de dados na pagina
+app.use(methodOverride(function (req, res) {
+    if (req.body && typeof req.body === 'object' && '_method' in req.body) {
+        // look in urlencoded POST bodies and delete it
+        var method = req.body._method
+        delete req.body._method
+        return method
+    }
 }));
 
 //importação modulo de rotas

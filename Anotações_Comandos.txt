@@ -84,3 +84,9 @@ https://developer.mozilla.org/pt-BR/docs/Web/Guide/HTML/Using_data_attributes
 //Refused to execute script from 'http://localhost:3000/remove-livro.js' because its MIME type ('text/html') is not executable, and strict MIME type checking is enabled
 //nova pasta app > public 
 //para toso os arquivos staticos do projeto
+
+
+--------------------------------------------------------------------------------
+//method-override
+//Middlewares
+npm install method-override@3.0.0 --save-exact

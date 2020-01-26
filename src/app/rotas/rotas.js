@@ -25,7 +25,7 @@ module.exports = (app) => {
 
         const livroDao = new LivroDao(db);
         //chama promise
-        livroDao.Lista()
+        livroDao.lista()
         .then(livros => resp.marko(
             require('../views/livros/lista/lista.marko'),{
                 livros: livros
@@ -34,17 +34,29 @@ module.exports = (app) => {
         .catch(erro => console.log(erro));       
     });
 
-    app.get('/livros/form', function(req, resp){
-        resp.marko(require('../views/livros/form/form.marko'))
+    app.get('/livros/form', function(req, resp) {
+        resp.marko(require('../views/livros/form/form.marko'), { livro: {} });
     });
 
-    //rota para post
+    //rota para post de cadastro de livros
     app.post('/livros', function(req, resp){
         console.log(req.body);
 
         const livroDao = new LivroDao(db);
         //chama promise
         livroDao.adiciona(req.body)
+        //após gravar novo livro, redireciona para /livros
+        .then(resp.redirect('/livros')) 
+        .catch(erro => console.log(erro));
+    });
+
+    //rota para post de edição de livros
+    app.put('/livros', function(req, resp){
+        console.log(req.body);
+
+        const livroDao = new LivroDao(db);
+        //chama promise
+        livroDao.atualiza(req.body)
         //após gravar novo livro, redireciona para /livros
         .then(resp.redirect('/livros')) 
         .catch(erro => console.log(erro));
@@ -62,5 +74,22 @@ module.exports = (app) => {
         .catch(erro => console.log(erro));
     });
 
+    //get editar livros para form
+    app.get('/livros/form/:id', function(req, resp) {
+        const id = req.params.id;
+        const livroDao = new LivroDao(db);
+    
+        livroDao.buscaPorId(id)
+            .then(livro => 
+                resp.marko(
+                    require('../views/livros/form/form.marko'),
+                    { livro: livro }
+                )
+            )
+            .catch(erro => console.log(erro));
+    
+    });
+
+    
 }
 
