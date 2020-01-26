@@ -30,5 +30,21 @@ module.exports = (app) => {
         ))
         .catch(erro => console.log(erro));       
     });
+
+    app.get('/livros/form', function(req, resp){
+        resp.marko(require('../views/livros/form/form.marko'))
+    });
+
+    //rota para post
+    app.post('/livros', function(req, resp){
+        console.log(req.body);
+
+        const livroDao = new LivroDao(db);
+        //chama promise
+        livroDao.adiciona(req.body)
+        .then()
+        .catch(erro => console.log(erro));
+    });
+
 }
 

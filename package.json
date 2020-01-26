@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/RossiEric/Curso-Alura-Node.js---JavaScript-no-backend#readme",
   "dependencies": {
+    "body-parser": "1.18.3",
     "express": "4.16.3",
     "marko": "4.13.4-1",
     "sqlite3": "4.1.1"

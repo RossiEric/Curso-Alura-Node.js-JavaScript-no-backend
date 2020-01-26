@@ -8,6 +8,15 @@ const express = require('express');
 //chamada da função express para receber objetos
 const app = express();
 
+//chamada de body-parser para aplicação
+const bodyParser = require('body-parser');
+
+//definir Middleware do body-parser para 
+//receber objetos complexos em json dos forms
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
+
 //importação modulo de rotas
 const rotas = require('../app/rotas/rotas');
 
