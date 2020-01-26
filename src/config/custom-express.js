@@ -11,6 +11,9 @@ const app = express();
 //chamada de body-parser para aplicação
 const bodyParser = require('body-parser');
 
+//definindo arquivos publicos com Middleware e express.js
+app.use('/estatico', express.static('src/app/public'))
+
 //definir Middleware do body-parser para 
 //receber objetos complexos em json dos forms
 app.use(bodyParser.urlencoded({

@@ -1,4 +1,7 @@
+//DAO / class, com todos os metodos relacionados a livros
 const LivroDao = require('../infra/livro-dao');
+
+//declaração do banco de dados
 const db = require('../../config/database');
 
 //exporta uma função do modulo que pode receber o parametro app
@@ -44,6 +47,18 @@ module.exports = (app) => {
         livroDao.adiciona(req.body)
         //após gravar novo livro, redireciona para /livros
         .then(resp.redirect('/livros')) 
+        .catch(erro => console.log(erro));
+    });
+
+    //rota delete
+    //variavel dinamica via express.js usando :id
+    app.delete('/livros/:id', function(req, resp){
+        const id = req.params.id;
+        const livroDao = new LivroDao(db);
+        //chama promise para remover
+        livroDao.remove(id)
+        //após remover livro, devolver status 200 para navegador
+        .then(() => resp.status(200).end) 
         .catch(erro => console.log(erro));
     });
 
