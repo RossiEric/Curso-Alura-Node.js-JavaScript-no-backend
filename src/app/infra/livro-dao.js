@@ -4,16 +4,20 @@ class LivroDao{
         this._db = db;
     }
 
-    Lista(callback){
+    Lista(){
 
-        this._db.all(
-            'SELECT * from livros',
-            (erro, resultados) =>
-                callback(erro, resultados)            
-        )
-
+        return new Promise((resolve, reject) => {
+            this._db.all(
+                'SELECT * from livros',
+                (erro, resultados) => {
+                    //caso erro
+                    if(erro) return reject('Não foi possivel listar!');
+                    //sem erro, resolve
+                    return resolve(resultados);
+                }   
+            )
+        });
     };
-
 }
 
 module.exports = LivroDao;

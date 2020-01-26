@@ -19,16 +19,16 @@ module.exports = (app) => {
     });
 
     app.get('/livros', function(req, resp){
+
         const livroDao = new LivroDao(db);
-        livroDao.Lista(function(erro, resultados){
-            //responde com html
-            resp.marko(
-                //
-                require('../views/livros/lista/lista.marko'),{
-                    livros: resultados
-                }
-            );
-        });        
+        //chama promise
+        livroDao.Lista()
+        .then(livros => resp.marko(
+            require('../views/livros/lista/lista.marko'),{
+                livros: livros
+            }
+        ))
+        .catch(erro => console.log(erro));       
     });
 }
 
