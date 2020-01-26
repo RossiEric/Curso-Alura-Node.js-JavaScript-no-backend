@@ -42,7 +42,8 @@ module.exports = (app) => {
         const livroDao = new LivroDao(db);
         //chama promise
         livroDao.adiciona(req.body)
-        .then()
+        //após gravar novo livro, redireciona para /livros
+        .then(resp.redirect('/livros')) 
         .catch(erro => console.log(erro));
     });
 
